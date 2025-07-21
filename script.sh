@@ -11,3 +11,5 @@ sudo nix run nixpkgs#nixos-anywhere -- \
         --generate-hardware-config nixos-generate-config ./minibox/hardware-configuration.nix \
         --extra-files ./minibox/extra-files \
         nixos@192.168.29.144
+        
+# --impure (--option pure-eval false)

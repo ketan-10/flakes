@@ -38,7 +38,13 @@
   users.users.ketan = {
     isNormalUser = true;
     hashedPasswordFile = config.age.secrets.secret1.path;
+    extraGroups = [ "wheel" ];  # add ketan to sudoers file.
   };
+
+  # wayland 
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+  # programs.sway.enable = true; (sway tiling window manager pure wayland)
 
   system.stateVersion = "24.05";
 }
