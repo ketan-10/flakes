@@ -10,6 +10,8 @@
     (modulesPath + "/installer/scan/not-detected.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
     ./disk-config.nix
+    ./service/arr/jellyfin.nix
+    ./service/arr/qbittorrent.nix
   ];
   boot.loader.grub = {
     # no need to set devices, disko will add all devices that have a EF02 partition to the list already
@@ -53,4 +55,13 @@
   # programs.sway.enable = true; (sway tiling window manager pure wayland)
 
   system.stateVersion = "24.05";
+
+  # jellyfin 
+  media_server.jellyfin.enable = true;
+  media_server.qbittorrent.enable = true;
+
+  environment.variables = {
+    EDITOR = "vim";
+    VISUAL = "vim";
+  };
 }
