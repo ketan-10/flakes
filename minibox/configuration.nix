@@ -19,9 +19,15 @@
   };
   services.openssh.enable = true;
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nixpkgs.config.allowUnfree = true;
+
+
   environment.systemPackages = map lib.lowPrio [
     pkgs.curl
     pkgs.gitMinimal
+    pkgs.firefox
+    pkgs.vim
   ];
 
   age = {
